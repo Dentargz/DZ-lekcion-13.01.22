@@ -1,0 +1,12 @@
+string PrintNumber(int number)
+{   
+    string rezult;
+    if (number==7||number==6) rezult = "да - Ура, выходной";
+    else rezult = "нет - Увы,опять работать";
+    return rezult;
+}
+
+Console.Write("Введите номер для недели: ");
+int num = Convert.ToInt32(Console.ReadLine());
+if (num>0&&num<8) Console.WriteLine($"{num} -> {PrintNumber(num)}");
+else Console.WriteLine("К счастью или к огорчению дней в неделе только 7");
