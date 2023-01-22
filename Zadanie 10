@@ -9,3 +9,11 @@ num1 = num % 10;
 num /= 10;
 
 Console.WriteLine(num2);
+
+
+// по сути с рандомным тоже работает но по условию задания нужен ввод трёхзначного числа,ниже укажу с вводом трёхзначного числа пользователем
+
+Console.Write("Введите трнёхзначное число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+if (num>99&&num<1000) Console.WriteLine($"{num} -> {num / 10 % 10}");
+else Console.WriteLine("число не трёхзначное");
