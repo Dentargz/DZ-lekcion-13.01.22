@@ -1,0 +1,18 @@
+Console.WriteLine("Введите координаты точки A: ");
+Console.Write("X: ");
+int AX = Convert.ToInt32(Console.ReadLine());
+Console.Write("Y: ");
+int AY = Convert.ToInt32(Console.ReadLine());
+Console.Write("Z: ");
+int AZ = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите координаты точки B: ");
+Console.Write("X: ");
+int BX = Convert.ToInt32(Console.ReadLine());
+Console.Write("Y: ");
+int BY = Convert.ToInt32(Console.ReadLine());
+Console.Write("Z: ");
+int BZ = Convert.ToInt32(Console.ReadLine());
+
+double distance = Math.Sqrt(Math.Pow(AX-BX,2)+Math.Pow(AY-BY,2)+Math.Pow(AZ-BZ,2));
+Console.WriteLine("Расcтояние между точками: "+Math.Round(distance,3));
