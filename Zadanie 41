@@ -1,0 +1,27 @@
+Console.Write("Введите количество чисел для ввода: ");
+int M = Convert.ToInt32(Console.ReadLine());
+
+int[] arr = FillArray(M);
+int[] FillArray(int M)
+{
+    int[] array = new int[M];
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{i+1} число: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}
+
+int Count(int[] array)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i]>0) count++;
+    }
+    return count;
+}
+
+Console.Write(String.Join(", ", arr));
+Console.Write($" ->   из них положительных {Count(arr)}");
