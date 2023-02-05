@@ -1,0 +1,15 @@
+Console.WriteLine("Дано две прямых, которые заданы уравнениями: ");
+Console.WriteLine("y=k1*x+b1");
+Console.WriteLine("y=k2*x+b2");
+Console.WriteLine("Введите значения переменных b1,k1,b2,k2");
+Console.Write("b1 = ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("k1 = ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("b2 = ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("k2 = ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+double x = -1*(b1-b2)/(k1-k2);
+double y = k1*x+b1;
+Console.WriteLine($"Точка пересечения двух прямых находится по координате -> ({x};{y})");
