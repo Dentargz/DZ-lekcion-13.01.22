@@ -1,0 +1,49 @@
+int x = new Random().Next(2,4);
+int y = new Random().Next(2,4);
+int z = new Random().Next(2,4);
+Console.WriteLine("Массив размером " + x + " х " + y + " x " + z);
+
+int[,,] arr = FillArray(x, y, z);
+
+PrintArray(arr);
+
+int[,,] FillArray(int x, int y, int z)
+{
+    int[,,] array = new int[x, y, z];
+    string listNumb = string.Empty;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                int newNum = new Random().Next(10, 100);
+                int indexOfSub = listNumb.IndexOf($"{newNum};");
+                while (indexOfSub != -1)
+                {
+                    newNum = new Random().Next(10, 100);
+                    indexOfSub = listNumb.IndexOf($"{newNum};");
+                }
+                array[i, j, k] = newNum;
+                listNumb += $"{newNum};";
+            }
+        }
+    }
+    return array;
+}
+
+void PrintArray(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j, k]} ({i},{j},{k})   ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
