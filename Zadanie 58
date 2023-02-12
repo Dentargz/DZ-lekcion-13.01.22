@@ -1,0 +1,45 @@
+int m = new Random().Next(1,6);
+int n = new Random().Next(1,6);
+int[,] GetArray(int m, int n)
+{
+    int[,] arr = new int[m, n];
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            arr[i, j] = new Random().Next(1,10);
+        }
+    }
+    return arr;
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j],4} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.WriteLine("Массив 1");
+int[,] array1 = GetArray(m,n);
+PrintArray(array1);
+Console.WriteLine();
+int[,] array2 = GetArray(m,n);
+Console.WriteLine("Массив 2");
+PrintArray(array2);
+Console.WriteLine();
+Console.WriteLine("Произведение массивов 1 и 2");
+int[,] array3 = new int[m,n];
+for (int i = 0; i < array3.GetLength(0); i++)
+{
+    for (int j = 0; j < array3.GetLength(1); j++)
+    {
+        array3[i,j] = array1[i,j] * array2[i,j];
+    }
+}
+PrintArray(array3);
