@@ -1,0 +1,66 @@
+Console.Write("Ввести размер row ");
+int row = Convert.ToInt32(Console.ReadLine());
+Console.Write("Ввести размер col ");
+int col = Convert.ToInt32(Console.ReadLine());
+
+int[,] arr = FillArray(row,col);
+PrintArr(arr);
+
+int NumRow = RowWithMinSum(arr);
+Console.WriteLine(NumRow);
+
+
+
+int[,] FillArray(int row, int col)
+{
+    int[,] array = new int[row, col];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 11);
+        }
+    }
+    return array;
+}
+
+
+void PrintArr(int[,] arry)
+{
+
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write($"{arry[i, j],4}");
+        }
+        Console.WriteLine();
+    }
+}
+int RowWithMinSum(int[,] array)
+{
+    int min = arr[0, 0];
+    int result = 1;
+
+    for (int i = 1; i < arr.GetLength(1); i++)
+    {
+        min += arr[0, i];
+    }
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            sum += arr[i, j];
+        }
+
+        if (sum < min)
+        {
+            min = sum;
+            result = i + 1;
+        }
+
+    }
+    return result;
+}
+
