@@ -1,0 +1,11 @@
+Console.Write("Введите начало N: ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+Console.Write(PrintNumbers(N));
+
+string PrintNumbers(int num)
+{
+    if (num==1) return num.ToString();
+    if (num<=0) return $"{num}, {PrintNumbers(num+1)}";
+    else return $"{num}, {PrintNumbers(num-1)}";
+}
